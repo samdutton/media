@@ -2,7 +2,7 @@ var SLIDE_CONFIG = {
   // Slide settings
   settings: {
     title: 'Media APIs for the multi-platform Web',
-    subtitle: 'Chrome Developer Summit',
+//    subtitle: 'Chrome Developer Summit',
     eventTitle: '',
     useBuilds: true, // Default: true. False will turn off slide animation builds.
     usePrettify: true, // Default: true
@@ -19,11 +19,11 @@ var SLIDE_CONFIG = {
 
   // Author information
   presenters: [
-    {
-      name: 'Jan Linden',
-      company: 'Senior Product Manager, Google',
-      gplus: 'https://plus.google.com/101097675148849633109/posts'
-    },
+    // {
+    //   name: 'Jan Linden',
+    //   company: 'Senior Product Manager, Google',
+    //   gplus: 'https://plus.google.com/101097675148849633109/posts'
+    // },
     {
     name: 'Sam Dutton',
     company: 'Developer Advocate, Google Chrome',

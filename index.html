@@ -39,10 +39,10 @@ URL: https://code.google.com/p/io-2012-slides
   <!-- The content of this hgroup is replaced programmatically through the slide_config.json. -->
   <hgroup class="auto-fadein">
     <h1 style="width: 70%; margin: 0 0 0.5em 0;" data-config-title><!-- populated from slide_config.json --></h1>
-    <h2 data-config-subtitle><!-- populated from slide_config.json --></h2>
+    <!-- <h2 data-config-subtitle>populated from slide_config.json</h2> -->
     <p data-config-presenter><!-- populated from slide_config.json --></p>
-<!--     <p><a href="http://twitter.com/sw12" title="Sam Dutton on Twitter">@sw12</a></p>
- -->  </hgroup>
+    <p><a href="http://twitter.com/sw12" title="Sam Dutton on Twitter">@sw12</a></p>
+  </hgroup>
   <aside class="note">
     <p>I'm going to talk about media APIs for the modern web: audio, video and realtime communication.</p>
     <p>I tweet quit a lot about media APIs. I'm SW12, not Sam Dutton. Sam Dutton on Twitter is some guy in Arizona. Last time I looked he'd just got stung by a wasp. So - commiserations to Sam Dutton.</p>
@@ -190,6 +190,13 @@ URL: https://code.google.com/p/io-2012-slides
   </aside>
 </slide>
 
+<slide class="fill nobackground" style="background-image: url(images/evolution.png)">
+  <aside class="note">
+    <p>New APIs push the limits of what you can do in the mobile browser.</p>
+    <p>And audio, video and better connectivity push the limits as well.</p>
+ </aside>
+</slide>
+
 <slide class="nobackground">
 <hgroup>
     <h2 style="color: black; font-family: 'Faith Collapsing'; font-size: 200%; letter-spacing: 1.1px">Ye olde Flashe vid</h2>
@@ -290,8 +297,8 @@ URL: https://code.google.com/p/io-2012-slides
     </pre>
   </article>
   <aside class="note">
-    <p>That's pretty cool - the source is selected automatically with no hackery.</p>
-    <p>...and just two video formats to cover all the browsers that support video.</p>
+    <p>Using the source element the source is selected automatically with no hackery.</p>
+    <p>...and just two formats cover all the browsers that support the video element.</p>
     <p>There used to be a bug on iOS where you had to include the .mp4 source first - don't need to worry about that now.</p>
   </aside>
 </slide>
@@ -554,7 +561,7 @@ function errorCallback(error) {
   </aside>
 </slide>
 
-<slide>
+<!-- <slide>
   <hgroup>
     <h2>gUM permissions</h2>
   </hgroup>
@@ -584,12 +591,12 @@ function errorCallback(error) {
       <p>There are efforts underway to provide better error messages.</p>
       <p>file:// URLs are prohibited for lots of Chrome APIs to avoid security problems</p>
     </aside>
-</slide>
+</slide> -->
 
-<slide class="nobackground">
+<slide>
   <article class="fill flexbox vcenter">
     <div style="margin: 0 0 1em 0; font-weight: bold">gUM + Canvas</div>
-    <div><a href="http://idevelop.github.com/ascii-camera/" title="getUserMedia video rendered as ASCII art">idevelop.github.com/ascii-camera</a></div>
+    <div class="quiteBig"><a href="http://idevelop.github.com/ascii-camera/" title="getUserMedia video rendered as ASCII art">idevelop.github.com/ascii-camera</a></div>
   </article>
   <aside class="note">
   <p>gUM gets interesting when plugged into other APIs.</p>
@@ -602,7 +609,7 @@ function errorCallback(error) {
   </hgroup>
     <article class="fill flexbox vcenter">
       <div style="margin: 0 0 1em 0; font-weight: bold">Select resolution</div>
-      <div><a href="https://simpl.info/getusermedia/constraints/" title="getUserMedia constraints demo">simpl.info/getusermedia/constraints</a></div>
+      <div class="quiteBig"><a href="https://simpl.info/res" title="getUserMedia constraints demo">simpl.info/res</a></div>
     </article>
     <aside class="note">
       <p>Constraints can let us choose resolution.</p>
@@ -615,7 +622,7 @@ function errorCallback(error) {
   </hgroup>
     <article class="fill flexbox vcenter">
       <div style="margin: 0 0 1em 0; font-weight: bold">Select mic and camera</div>
-      <div style="margin: 0 0 3em 0;"><a href="https://simpl.info/getusermedia/sources/" title="getUserMedia sources demo">simpl.info/getusermedia/sources
+      <div  class="quiteBig" style="margin: 0 0 2em 0;"><a href="https://simpl.info/sources" title="getUserMedia sources demo">simpl.info/sources
 </a></div>
       <div style="font-size: 70%"><a href="https://play.google.com/store/apps/details?id=com.chrome.beta" title="Google Play: install Chrome Beta for Android">Install Chrome Beta for Android</a></div>
     </article>
@@ -627,7 +634,7 @@ function errorCallback(error) {
 </slide>
 
 
-<slide>
+<!-- <slide>
   <hgroup>
     <h2>Work underway to make this more user-focused</h2>
   </hgroup>
@@ -645,7 +652,7 @@ function errorCallback(error) {
     <p>Selfie mode!</p>
     <p>With applyConstraints(): width, height, framerate, facingMode, etc.</p>
   </aside>
-</slide>
+</slide> -->
 
 <slide>
   <hgroup>
@@ -744,8 +751,6 @@ navigator.webkitGetUserMedia(constraints, gotStream);
     <h2>Why Web Audio when we have &lt;audio&gt;?</h2>
   </hgroup>
   <article>
-  <p>&lt;audio&gt; for playing 'long' files and streaming</p>
-  <p>Web Audio provides:</p>
   <ul>
     <li>Precise timing of overlapping sounds</li>
     <li>Audio pipeline/routing for effects and filters</li>
@@ -754,28 +759,29 @@ navigator.webkitGetUserMedia(constraints, gotStream);
   </ul>
   </article>
   <aside class="note">
-  <p>Timing is particularly important for games - and you need to be able to overlap sounds.</p>
+    <p>&lt;audio&gt; for playing 'long' files and streaming</p>
+    <p>Timing is particularly important for games - and you need to be able to overlap sounds.</p>
   </aside>
 </slide>
 
 <slide>
   <hgroup>
-    <h2>Web Audio can do a lot...</h2>
+    <h2>Web Audio can do a LOT...</h2>
   </hgroup>
   <article>
-    <ul>
+    <ul class="tight" style="font-size: 0.82em">
       <li>Oscillators</li>
-      <li>Dynamics processing (compression)</li>
-      <li>Waveshaping (non-linear distortion)</li>
-      <li>Frequency and waveform analysis</li>
-      <li>3D spatialization: positioning sound at a particular place</li>
-      <li>Doppler shift: changing pitch for moving sources</li>
-      <li>Distance attenuation and sound directionality</li>
-      <li>Filtering effects: radio, telephone, etc.</li>
-      <li>Acoustic environments: reverb, etc.</li>
-      <li>Time-based event scheduling</li>
       <li>Sequences/rhythms/loops</li>
       <li>Fade-ins/fade-outs/sweeps</li>
+      <li>Time-based event scheduling</li>
+      <li>Frequency and waveform analysis</li>
+      <li>Acoustic environments: reverb, etc.</li>
+      <li>Waveshaping (non-linear distortion)</li>
+      <li>Dynamics processing (compression)</li>
+      <li>Filtering effects: radio, telephone, etc.</li>
+      <li>Distance attenuation and sound directionality</li>
+      <li>Doppler shift: changing pitch for moving sources</li>
+      <li>3D spatialization: positioning sound at a particular place</li>
     </ul>
   </article>
   <aside class="note">
@@ -787,18 +793,14 @@ navigator.webkitGetUserMedia(constraints, gotStream);
     <h2>Web Audio status</h2>
   </hgroup>
   <article>
-<pre>
-Supported in Chrome
-Desktop and Android
-Apple Safari - Enabled in Safari 6.0+ and iOS6+
-In Firefox 25, desktop and Android
-W3C audio working group work continues
-Active participation in WG from Mozilla, Opera and others
-Audio input via getUserMedia()
-As low as 5 ms latency (mic -> speaker)
-Input to WebRTC in Chrome
-Output in the works
-</pre>
+    <ul>
+      <li>Chrome desktop and Android &mdash; including gUM input</li>
+      <li>Safari 6.0+ and iOS6+</li>
+      <li>Firefox 25 desktop and Android</li>
+      <li>Mic to speaker latency as low as 5ms</li>
+      <li>Input to WebRTC in Chrome</li>
+      <li>Output in the works</li>
+    </ul>
   </article>
   <aside class="note">
   </aside>
@@ -806,7 +808,7 @@ Output in the works
 
 <slide>
   <hgroup>
-    <h2>getUserMedia + Web Audio</h2>
+    <h2>getUserMedia ☞ Web Audio</h2>
   </hgroup>
   <article>
     <pre class="prettyprint" data-lang="javascript">
@@ -830,9 +832,72 @@ navigator.webkitGetUserMedia( <b>{audio:true}</b>, gotStream);
   </aside>
 </slide>
 
+<slide class="nobackground">
+  <article class="fill flexbox vcenter">
+    <div style="margin: 0 0 1em 0; font-weight: bold">gUM + Web Audio + WebGL</div>
+    <div><a href="http://www.webaudiodemos.appspot.com/input/index.html" title="Record audio">webaudiodemos.appspot.com/Vocoder</a></div>
+  </article>
+  <aside class="note">
+  </aside>
+</slide>
+
+<slide>
+  <hgroup>
+    <h2>gUM ☞ Web Audio ☞ RTCPeerConnection</h2>
+  </hgroup>
+  <article>
+  <p style="margin: 0 0 2em 0">Capture microphone input and stream it to a peer with processing applied:</p>
+    <pre class="prettyprint" data-lang="javascript">
+navigator.getUserMedia('audio', gotAudio);
+function gotAudio(stream) {
+  var microphone = context.createMediaStreamSource(stream);
+  var filter = context.createBiquadFilter();
+  var peer = context.createMediaStreamDestination();
+  microphone.connect(filter);
+  filter.connect(peer);
+  peerConnection.addStream(peer.stream);
+}
+</pre>
+
+  <p style="margin: 2em 0 0 0"><a href="https://dvcs.w3.org/hg/audio/raw-file/tip/webaudio/webrtc-integration.html" title="W3C examples adapted from the MediaStream Processing API proposal">More Media Stream integration examples</a></p>
+
+  </article>
+  <aside class="note">
+    <p>Already in experimental builds and working well.</p>
+    <p>This is very powerful: effects into and out of RTCPeerConnection.</p>
+    <p>'Join the boxes' architecture.</p>
+  </aside>
+</slide>
+
+<slide>
+  <hgroup>
+    <h2>Web MIDI</h2>
+  </hgroup>
+  <article>
+  <ul>
+    <li>New proposed standard</li>
+    <li>Standard MIDI files: not just cheesy background music!</li>
+    <li>Connect controllers, synthesizers and more</li>
+    <li>Implemented in Mac Chrome 30 behind a flag</li>
+  </ul>
+  </article>
+  <aside class="note">
+  </aside>
+</slide>
+
+<slide>
+  <article class="fill flexbox vcenter">
+    <div style="margin: 0 0 2em 0; font-weight: bold">Synths and drum machines</div>
+    <div class="biggish" style="margin: 0 0 1em 0;"><a href="http://webaudiodemos.appspot.com/MIDIDrums/index.html" title="MIDI drum machine demo">MIDI drums</a></div>
+    <div class="biggish" style="margin: 0 0 1em 0;"><a href="http://webaudiodemos.appspot.com/midi-synth/index.html" title="MIDI synth">MIDI synth</a></div>
+    <div class="biggish" style="margin: 0 0 1em 0;"><a href="http://gridflux.googlecode.com/git/index.html" title="Gidflux synth">GRIDFLUX</a></div>
 
 
 
+  </article>
+  <aside class="note">
+  </aside>
+</slide>
 
 
 <!--  -->
@@ -850,7 +915,8 @@ navigator.webkitGetUserMedia( <b>{audio:true}</b>, gotStream);
 
 <slide class="nobackground">
   <article  class="fill flexbox vcenter">
-  <div class="big"><a href="http://www.simpl.info/mf" title="Media Fragments demo">simpl.info/mf</a></div>
+  <div class="big"><a href="" title="
+"></a></div>
   </article>
   <aside class="note">
   </aside>
