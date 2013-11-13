@@ -853,7 +853,7 @@ navigator.webkitGetUserMedia(constraints, gotStream);
     <h2>Web Audio status</h2>
   </hgroup>
   <article>
-    <ul style="margin: 0 0 1em 0">
+    <ul style="margin-bottom: 1em">
       <li>Chrome desktop and Android &mdash; including gUM input</li>
       <li>Safari 6.0+ and iOS6+</li>
       <li>Firefox 25 desktop and Android</li>
@@ -950,7 +950,8 @@ function gotAudio(stream) {
     <div style="margin: 0 0 2em 0; font-weight: bold">Synths and drum machines</div>
     <div class="biggish" style="margin: 0 0 1em 0;"><a href="http://webaudiodemos.appspot.com/MIDIDrums/index.html" title="MIDI drum machine demo">MIDI drums</a></div>
     <div class="biggish" style="margin: 0 0 1em 0;"><a href="http://webaudiodemos.appspot.com/midi-synth/index.html" title="MIDI synth">MIDI synth</a></div>
-    <div class="biggish" style="margin: 0 0 1em 0;"><a href="http://gridflux.googlecode.com/git/index.html" title="Gidflux synth">GRIDFLUX</a></div>
+    <div class="biggish" style="margin: 0 0 2em 0;"><a href="http://gridflux.googlecode.com/git/index.html" title="Gidflux synth">GRIDFLUX</a></div>
+    <div style="margin: 0 0 1.5em 0;"><a href="http://flippinawesome.org/2013/10/28/audio-synthesis-in-javascript/" title="Gidflux synth">Audio synthesis in JavaScript</a></div>
   </article>
   <aside class="note">
   </aside>
@@ -1342,8 +1343,9 @@ send(myData);
       <li>Impose limits via constraints or by editing SDP</li>
       <li>Make muting easy and obvious</li>
       <li>On desktop noone notices the permissions UI!</li>
-      <li>chrome://webrtc-internals</li>
     </ul>
+
+    <footer class="source">Source: <a href="https://thenewcircle.com/s/post/1548/a_practical_guide_to_building_webrtc_apps_ben_strong_video" title="Ben Strong presentation and video">A practical guide to building WebRTC apps</a></footer>
   </article>
   <aside class="note">
     <p>Some great advice here that I've stolen shamelessly from a recent presentation by vLine</p>
@@ -1356,6 +1358,7 @@ send(myData);
   </hgroup>
   <article>
   <ul class='tight'>
+    <li>chrome://webrtc-internals</li>
     <li>WebRTC and Web Audio resources list: <a href="http://bit.ly/webrtcwebaudio" title="WebRTC and Web Audio standards, documentation, tutorials, demos, samples and applications">bit.ly/webrtcwebaudio</a></li>
     <li><a href="http://www.youtube.com/watch?v=p2HzZkd2A40" title="Video of Google I/O 2013 WebRTC session on YouTube">Google I/O 2013 WebRTC presentation</a></li>
     <li><a href="http://www.bitbucket.org/webrtc/codelab" title="Step by step WebRTC codelab">Codelab</a>: build a video chat client and Node/Socket.io signaling service</li>
