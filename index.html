@@ -252,6 +252,19 @@ URL: https://code.google.com/p/io-2012-slides
   </aside>
 </slide>
 
+<slide>
+  <article class="fill flexbox vcenter">
+    <div class="demoLabel">Alpha transparency</div>
+    <p class="big" style="margin: 0 0 1.5em 0;"><a href="http://simpl.info/alpha" title="WebM alpha transparency demo">simpl.info/alpha</a></p>
+    <div style="font-size: 70%"><a href="http://updates.html5rocks.com/2013/07/Alpha-transparency-in-Chrome-video" title="HTML5 Rocks Update about alpha transparancy in WebM">HTML5 Rocks update</a></div>
+  </article>
+  <aside class="note">
+    <p>Just to show how far we've come with video on the web, here's a demo of using alpha transparency.</p>
+    <p>Just implemented in Chrome stable, the ability to use the alpha transparency with VP8.</p>
+    <p>Great for green screening!</p>
+  </aside>
+</slide>
+
 <slide class="nobackground">
   <article  class="fill flexbox vcenter">
     <pre class="quiteBig prettyprint" style="background: none;" >&lt;video src='chrome.webm<b>#t=5,10</b>' /&gt;</pre>
@@ -275,18 +288,6 @@ URL: https://code.google.com/p/io-2012-slides
   </aside>
 </slide>
 
-<slide>
-  <article class="fill flexbox vcenter">
-    <div class="demoLabel">Alpha transparency</div>
-    <p class="big" style="margin: 0 0 1.5em 0;"><a href="http://simpl.info/alpha" title="WebM alpha transparency demo">simpl.info/alpha</a></p>
-    <div style="font-size: 70%"><a href="http://updates.html5rocks.com/2013/07/Alpha-transparency-in-Chrome-video" title="HTML5 Rocks Update about alpha transparancy in WebM">HTML5 Rocks update</a></div>
-  </article>
-  <aside class="note">
-    <p>Just implemented in Chrome stable, the ability to use the alpha transparency with VP8.</p>
-    <p></p>
-  </aside>
-</slide>
-
 <slide class="nobackground">
   <article class="fill flexbox vcenter">
     <pre class="biggish prettyprint" style="background: none;">
@@ -297,7 +298,7 @@ URL: https://code.google.com/p/io-2012-slides
     </pre>
   </article>
   <aside class="note">
-    <p>Using the source element the source is selected automatically with no hackery.</p>
+    <p>Using the source element enables the browser to automatically select the video src with no hackery.</p>
     <p>...and just two formats cover all the browsers that support the video element.</p>
     <p>There used to be a bug on iOS where you had to include the .mp4 source first - don't need to worry about that now.</p>
   </aside>
@@ -372,6 +373,61 @@ video.<b>videoHeight</b>
     <p>Let's highlight two things that DON'T work on mobile...</p>
 <p>Firstly autoplay - you can't script playback control on mobile either.</p>
 <p>Secondly, no preload – which on desktop can be used to buffer video. (Check out Steve Souders' preload data page).</p>
+  </aside>
+</slide>
+
+<slide>
+  <article class="fill flexbox vcenter">
+    <div style="margin: 0 0 2em 0; font-weight: bold">JavaScript can generate streams for playback</div>
+    <p class="big"><a href="http://simpl.info/mse" title="Media Source Extensions demo">simpl.info/mse</a></p>
+    <!-- <p><a href="w3.org/TR/media-source" title="MSE spec">Spec</a></p> -->
+<!--     <p><a href="updates.html5rocks.com/2011/11/Stream-video-using-the-MediaSource-API" title="Short MSE article on HTML5 Rocks">HTML5 Rocks Update</a></p>
+ -->  </article>
+  <aside class="note">
+    <p>MSE enables JavaScript to build streams for playback from chunks of video.</p>
+    <p>This use cases such as adaptive streaming and time shifting.</p>
+  </aside>
+</slide>
+
+<slide class="nobackground">
+  <article  class="fill flexbox vcenter">
+    <div class="big" style="margin: 0 0 1em 0;"><a href="http://dash-mse-test.appspot.com/dash-player.html?url=http://yt-dash-mse-test.commondatastorage.googleapis.com/media/car-20120827-manifest.mpd" title="Sample DASH Player">DASH video</a></div>
+    <div style="margin: 0 0 1em 0;"><a href="http://yt-dash-mse-test.commondatastorage.googleapis.com/media/car-20120827-manifest.mpd" title="Manifest file">DASH manifest file</a></div>
+    <div><a href="http://www.bbc.co.uk/rd/blog/2013/09/mpeg-dash-test-streams" title="DASH at the BBC">DASH at the BBC</a></div>
+  </article>
+  <aside class="note">
+    <p>EME demos use a JavaScript library to support MPEG DASH.</p>
+    <p>DASH which allows streaming of media over HTTP, somewhat like Apple's HTTP Live Streaming.</p>
+  </aside>
+</slide>
+
+<slide>
+  <hgroup>
+    <h2>EME</h2>
+    <h3>Encrypted Media Extensions</h3>
+  </hgroup>
+  <article>
+    <ul>
+      <li><a href="http://www.w3.org/TR/encrypted-media/" title="Encrypted Media Extensions W3C Working Draft">Spec</a></li>
+      <li><a href="http://dash-mse-test.appspot.com" title="">YouTube demo</a></li>
+      <li><a href="http://techblog.netflix.com/2013/04/html5-video-at-netflix.html" title="HTML5 Video at Netflix">Netflix on Chrome OS</a></li>
+      <li><a href="http://downloads.webmproject.org/adaptive-encrypted-demo/adaptive/index.html" title="WebM encrypted+adaptive demo">WebM encrypted + adaptive demo</a></li>
+      <li><a href="http://www.bbc.co.uk/rd/blog/2013/09/mpeg-dash-test-streams" title="BBC article about MPEG DASH">What is DASH?</a></li>
+    </ul>
+  </article>
+  <aside class="note">
+    <p>EME is a JavaScript API, an extension of the HTMLMediaElement APIs, that enables web applications to interact with DRM systems, in order to allow playback of encrypted media.</p>
+    <p>EME can either use simple ClearKey encryption or an add-on DRM module, such as WideVine.</p>
+    <p>Browsers that support EME can detect that a video is encrypted when playback begins, then interact with Content Decryption Modules, CDMs, to obtain a key and play back decrypted content.</p>
+  </aside>
+</slide>
+
+<slide class="nobackground">
+  <article class="fill flexbox vcenter">
+    <div style="margin: 0 0 2em 0; font-weight: bold">EME ClearKey demo</div>
+    <div class="big"><a href="http://www.simpl.info/eme/clearkey/src" title="ClearKey EME example">simpl.info/clearkey</a></div>
+  </article>
+  <aside class="note">
   </aside>
 </slide>
 
@@ -513,30 +569,6 @@ video.<b>videoHeight</b>
   <aside class="note">
     <p>Tools for Mac, Windows and Linux</p>
     <p>Transcoding in the cloud</p>
-  </aside>
-</slide>
-
-<slide>
-  <article class="fill flexbox vcenter">
-    <div style="margin: 0 0 2em 0; font-weight: bold">JavaScript can generate streams for playback</div>
-    <p class="big"><a href="http://simpl.info/mse" title="Media Source Extensions demo">simpl.info/mse</a></p>
-    <!-- <p><a href="w3.org/TR/media-source" title="MSE spec">Spec</a></p> -->
-<!--     <p><a href="updates.html5rocks.com/2011/11/Stream-video-using-the-MediaSource-API" title="Short MSE article on HTML5 Rocks">HTML5 Rocks Update</a></p>
- -->  </article>
-  <aside class="note">
-    <p>MSE enables JavaScript to build streams for playback from chunks of video.</p>
-    <p>This use cases such as adaptive streaming and time shifting.</p>
-  </aside>
-</slide>
-
-<slide class="nobackground">
-  <article  class="fill flexbox vcenter">
-    <div class="big"><a href="http://dash-mse-test.appspot.com/dash-player.html?url=http://yt-dash-mse-test.commondatastorage.googleapis.com/media/car-20120827-manifest.mpd" title="Sample DASH Player">DASH video</a></div>
-    <div><a href="url=http://yt-dash-mse-test.commondatastorage.googleapis.com/media/car-20120827-manifest.mpd" title="Manifest file"></a>DASH manifest file</div>
-  </article>
-  <aside class="note">
-    <p>These EME demos use a JavaScript library to support MPEG DASH.</p>
-    <p>DASH which allows streaming of media over HTTP, somewhat like Apple's HTTP Live Streaming.</p>
   </aside>
 </slide>
 
@@ -751,37 +783,6 @@ navigator.webkitGetUserMedia(constraints, gotStream);
 </slide>
 
 
-<slide>
-  <hgroup>
-    <h2>EME</h2>
-    <h3>Encrypted Media Extensions</h3>
-  </hgroup>
-  <article>
-    <ul>
-      <li><a href="http://www.w3.org/TR/encrypted-media/" title="Encrypted Media Extensions W3C Working Draft">Spec</a></li>
-      <li><a href="http://dash-mse-test.appspot.com" title="">YouTube demo</a></li>
-      <li><a href="http://techblog.netflix.com/2013/04/html5-video-at-netflix.html" title="HTML5 Video at Netflix">Netflix on Chrome OS</a></li>
-      <li><a href="http://downloads.webmproject.org/adaptive-encrypted-demo/adaptive/index.html" title="WebM encrypted+adaptive demo">WebM encrypted + adaptive demo</a></li>
-      <li><a href="http://www.bbc.co.uk/rd/blog/2013/09/mpeg-dash-test-streams" title="BBC article about MPEG DASH">What is DASH?</a></li>
-    </ul>
-  </article>
-  <aside class="note">
-    <p>EME is a JavaScript API, an extension of the HTMLMediaElement APIs, that enables web applications to interact with DRM systems, in order to allow playback of encrypted media.</p>
-    <p>EME can either use simple ClearKey encryption or an add-on DRM module, such as WideVine.</p>
-    <p>Browsers that support EME can detect that a video is encrypted when playback begins, then interact with Content Decryption Modules, CDMs, to obtain a key and play back decrypted content.</p>
-  </aside>
-</slide>
-
-<slide class="nobackground">
-  <article class="fill flexbox vcenter">
-    <div style="margin: 0 0 2em 0; font-weight: bold">EME ClearKey demo</div>
-    <div class="big"><a href="http://www.simpl.info/eme/clearkey/src" title="ClearKey EME example">simpl.info/clearkey</a></div>
-  </article>
-  <aside class="note">
-  </aside>
-</slide>
-
-
 
 <slide class="segue dark nobackground">
   <aside class="gdbar"><img src="images/google_developers_icon_128.png"></aside>
@@ -810,6 +811,7 @@ navigator.webkitGetUserMedia(constraints, gotStream);
   </hgroup>
   <article>
   <ul>
+    <li>High performance for multiple sounds</li>
     <li>Precise timing of overlapping sounds</li>
     <li>Audio pipeline/routing for effects and filters</li>
     <li>Visualize and manipulate audio data</li>
@@ -851,7 +853,7 @@ navigator.webkitGetUserMedia(constraints, gotStream);
     <h2>Web Audio status</h2>
   </hgroup>
   <article>
-    <ul>
+    <ul style="margin: 0 0 1em 0">
       <li>Chrome desktop and Android &mdash; including gUM input</li>
       <li>Safari 6.0+ and iOS6+</li>
       <li>Firefox 25 desktop and Android</li>
@@ -859,6 +861,7 @@ navigator.webkitGetUserMedia(constraints, gotStream);
       <li>Input to WebRTC in Chrome</li>
       <li>Output in the works</li>
     </ul>
+    <div>More information? <a href="http://www.youtube.com/watch?v=wZrNI-86zYI" title="Chris Wilson Web Audio presentation">Anything by Chris Wilson!</a></div>
   </article>
   <aside class="note">
   </aside>
@@ -916,9 +919,8 @@ function gotAudio(stream) {
   peerConnection.addStream(peer.stream);
 }
 </pre>
-
+  <div><a href="http://localhost/simpl/webrtcwebaudio/index.html" title="WebRTC as input to RTCPeerConnection">Demo</a></div>
   <p style="margin: 2em 0 0 0"><a href="https://dvcs.w3.org/hg/audio/raw-file/tip/webaudio/webrtc-integration.html" title="W3C examples adapted from the MediaStream Processing API proposal">More Media Stream integration examples</a></p>
-
   </article>
   <aside class="note">
     <p>Already in experimental builds and working well.</p>
@@ -960,6 +962,9 @@ function gotAudio(stream) {
     <h2 style="width: 780px">WebRTC</h2>
   </hgroup>
   <aside class="note">
+    <p>So - we have the ability to do great things with audio and video on the web.</p>
+    <p>But what about communication?</p>
+    <p>Well - for this we have WebRTC, and this is one the most ambitious and maybe disruptive web projects in many years.</p>
   </aside>
 </slide>
 
@@ -975,7 +980,8 @@ function gotAudio(stream) {
   <aside class="note">
     <p>WebRTC is a collaboration to build real time communication into web browsers.</p>
     <p>It's really a response to the demand for realtime communication features in the open web - without plugins or proprietary codecs, free for users and developers to use.</p>
-    <p>This has been a big missing feature in the web platform.</p>
+    <p>This has been a big missing feature in the web platform...</p>
+    <p>...and is absolutely crucial for web apps on devices built for communication.</p>
   </aside>
 </slide>
 
@@ -1326,6 +1332,23 @@ send(myData);
 </slide>
 
 
+<slide class="nobackground">
+  <hgroup>
+    <h2>WebRTC for the multi device web</h2>
+  </hgroup>
+  <article>
+    <ul>
+      <li>Don't provide resolutions higher than the receiver can handle</li>
+      <li>Impose limits via constraints or by editing SDP</li>
+      <li>Make muting easy and obvious</li>
+      <li>On desktop noone notices the permissions UI!</li>
+      <li>chrome://webrtc-internals</li>
+    </ul>
+  </article>
+  <aside class="note">
+    <p>Some great advice here that I've stolen shamelessly from a recent presentation by vLine</p>
+  </aside>
+</slide>
 
 <slide>
   <hgroup>
@@ -1350,70 +1373,16 @@ send(myData);
     <p></p>
   </aside>
 </slide>
-<!--  -->
-<!--  -->
-
 
 <slide class="nobackground">
-  <article  class="fill flexbox vcenter">
-    <pre class="biggish prettyprint" style="background: none;">
-    </pre>
-  </article>
-  <aside class="note">
-  </aside>
-</slide>
-
-<slide class="nobackground">
-  <article  class="fill flexbox vcenter">
-  <div class="big"><a href="" title="
-"></a></div>
-  </article>
-  <aside class="note">
-  </aside>
-</slide>
-
-<slide class="nobackground">
-  <hgroup>
-  <h2></h2>
-  </hgroup>
-  <article>
-  </article>
-  <aside class="note">
-  </aside>
-</slide>
-
-<slide class="segue dark nobackground">
-  <aside class="gdbar"><img src="images/google_developers_icon_128.png"></aside>
-  <hgroup class="auto-fadein">
-    <h2 style="width: 780px"></h2>
-  </hgroup>
-  <aside class="note">
-  </aside>
-</slide>
-
-
-
-
-<!--  -->
-<!--  -->
-
-
-<slide class="nobackground">
-  <hgroup>
-    <h2>What about WebRTC?</h2>
-  </hgroup>
-  <article>
-    <ul>
-      <li>Don't provide resolutions higher than the receiver can handle</li>
-      <li>Impose limits via constraints or by editing SDP</li>
-      <li>Make muting easy and obvious</li>
-      <li>On desktop noone notices the permissions UI!</li>
-      <li>chrome://webrtc-internals</li>
-    </ul>
-  </article>
-  <aside class="note">
-    <p>Some great advice here that I've stolen shamelessly from a recent presentation by vLine</p>
-  </aside>
+    <article class="fill flexbox vcenter">
+      <div class="biggish" style="margin: 0 0 1em 0;">WebRTC live!</div>
+      <div class="quiteBig" style="margin: 0 0 1em 0;">Go here now :^):</div>
+      <div class="big"><a href="http://talky.io/devoxx" title="Video chat app">talky.io/devoxx</a></div>
+    </article>
+    <aside class="note">
+    <p>WebRTC live!</p>
+    </aside>
 </slide>
 
 <slide class="nobackground">
@@ -1430,16 +1399,6 @@ send(myData);
     <p>Here are two great resources for discovering what's been implemented where, on mobile and desktop.</p>
     <p>chromestatus.com has been updated - please let us know if anything is missing.</p>
   </aside>
-</slide>
-
-<slide class="nobackground">
-    <article class="fill flexbox vcenter">
-      <div class="quiteBig" style="margin: 0 0 1em 0;">WebRTC live! Go here now:</div>
-      <div class="big"><a href="http://talky.io/devoxx" title="Video chat app">talky.io/devoxx</a></div>
-    </article>
-    <aside class="note">
-    <p>WebRTC live!</p>
-    </aside>
 </slide>
 
 <slide class="thank-you-slide segue nobackground">
